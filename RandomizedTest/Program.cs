@@ -13,8 +13,8 @@ namespace RandomizedTest
     {
         static void Main(string[] args)
         {
-            int numData = 10000;
-            double trueP = 0.7;
+            int numData = 1000;
+            double trueP = 0.36;
 
             Console.WriteLine("*************");
             Console.WriteLine("True p = {0}", trueP);
@@ -52,13 +52,14 @@ namespace RandomizedTest
             // inference engine uses EP by default
             InferenceEngine engine = new InferenceEngine();
 
-            // get the mean of the posterior for theta RV
+            // get theta marginal
             Beta thetaMarginal = engine.Infer<Beta>(theta);
 
             Console.WriteLine("\n\nPosterior of theta:");
             Console.WriteLine("E(theta) = {0}", thetaMarginal.GetMean());
-            Console.WriteLine("Var(theta) = {0}", thetaMarginal.GetVariance());
+            Console.WriteLine("Std(theta) = {0}", Math.Sqrt(thetaMarginal.GetVariance()));
 
+            Console.WriteLine("\nPress any key...");
             Console.ReadKey();
         }
 
