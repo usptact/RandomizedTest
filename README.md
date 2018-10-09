@@ -13,5 +13,6 @@ The process goes as follows:
 
 The program generates synthetic dataset given number of examples and the true cheating proportion.
 
-The program code is BSD licensed but uses the Infer.NET library.
-The Infer.NET library has its own, more restricted license. Check the terms on the respective website.
+The program code is BSD licensed.
+
+Updated to use open source Infer.NET.
